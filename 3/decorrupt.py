@@ -12,6 +12,19 @@ with open(data_file_path) as f:
 def mul(a, b):
     return a * b
 
-memory = re.findall(r'mul\(\d{1,3},\d{1,3}\)', memory)
+memory1 = re.findall(r'mul\(\d{1,3},\d{1,3}\)', memory)
+memory2 = re.findall(r'(don\'t\(\)|do\(\)|mul\(\d{1,3},\d{1,3}\))', memory)
 
-print("sum: ",  sum([eval(m) for m in memory]))
+print("sum: ",  sum([eval(m) for m in memory1]))
+
+sum2 = 0
+enabled = True
+for m in memory2:
+    if m == "don't()":
+        enabled = False
+    elif m == "do()":
+        enabled = True
+    elif enabled:
+        sum2 += eval(m)
+#print("memory2: ", memory2)
+print("sum2: ", sum2)
