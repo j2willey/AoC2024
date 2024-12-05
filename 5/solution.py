@@ -9,7 +9,6 @@ updates = []
 
 with open(data_file_path) as f:
     lines = f.readlines()
-
     for line in lines:
         if '|' in line:
             rules.append([ int(i) for i in line.strip().split("|")])
