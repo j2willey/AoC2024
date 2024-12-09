@@ -1,6 +1,6 @@
 import os
 import copy
-import sys
+
 # Get the directory of the current script
 filename = "test.txt"
 filename = "input.txt"
