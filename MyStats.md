@@ -26,10 +26,17 @@ a disk scheduler... with an algorythm for reading, writing and updating
 files on a disk.  I vaguely remember that.  And I was able to leave the
 week before finals!
 
-## As of Day 9....
+Day 10, my fast time and best ratings yet! Yeah.  My first implementation
+unknowingly at the time solved Part 2. After _rereading_ the problem
+description I had to fix it for Part 1.  Then when part 2 was revealed,
+I had to rewrite the original implementation.  8-)
+
+
+## As of Day 10....
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 10   00:32:30   5088      0   00:37:49   4830      0
   9   00:43:15   5517      0   02:32:17   7100      0
   8   00:44:09   5828      0   00:55:05   5271      0
   7   00:48:55   7369      0   19:51:21  45847      0
