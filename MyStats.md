@@ -31,11 +31,13 @@ unknowingly at the time solved Part 2. After _rereading_ the problem
 description I had to fix it for Part 1.  Then when part 2 was revealed,
 I had to rewrite the original implementation.  8-)
 
+Day 11, I should have been faster on both parts.
 
 ## As of Day 10....
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 11   00:18:32   5052      0   00:47:08   3842      0
  10   00:32:30   5088      0   00:37:49   4830      0
   9   00:43:15   5517      0   02:32:17   7100      0
   8   00:44:09   5828      0   00:55:05   5271      0
