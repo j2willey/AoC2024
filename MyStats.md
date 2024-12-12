@@ -33,10 +33,13 @@ I had to rewrite the original implementation.  8-)
 
 Day 11, I should have been faster on both parts.
 
-## As of Day 10....
+Day 12. Late start as we had Scouts last night.  I'm pleased with my solutions.
+
+## As of Day 12....
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 12   10:52:34  26427      0   12:02:48  16648      0
  11   00:18:32   5052      0   00:47:08   3842      0
  10   00:32:30   5088      0   00:37:49   4830      0
   9   00:43:15   5517      0   02:32:17   7100      0
