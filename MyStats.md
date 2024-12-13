@@ -35,10 +35,18 @@ Day 11, I should have been faster on both parts.
 
 Day 12. Late start as we had Scouts last night.  I'm pleased with my solutions.
 
-## As of Day 12....
+Day 13. Maths is hard....  Late start after another Scout meeting...
+quick solution with linear search for part 1.  Much to slow for Part 2.
+Quickly tried to create a binary search which didn't work.  I was too
+tired to mathematically solve, so went to bed.  This morning I worked
+through the two equations, two unknowns, solve for one, then the other.
+(after a couple of mistakes and fixes 8-) Found the correct solution...
+
+## As of Day 13....
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 13   01:18:45   7078      0   11:04:46  19839      0
  12   10:52:34  26427      0   12:02:48  16648      0
  11   00:18:32   5052      0   00:47:08   3842      0
  10   00:32:30   5088      0   00:37:49   4830      0
