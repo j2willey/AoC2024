@@ -55,12 +55,18 @@ there were atleast 6 blank lines elsewhere in the image that were recognized
 as "symmetric", and the whole map printed so I could find the Needles of
 ac Christmas Tree in the Haystack of seconds!!! LoL!
 
+Day 15.  Had a OA Holiday Party last night.  By the time I got home
+I was only able to code reading in and printing the Map and directions.
+This morning and to prepare for a CoH, and was only able to get back
+to the problem this evening.  At least I solved it befpre 24 hours
+and I can directly attack tonights challenge.  8-)
 
 
-## As of Day 14....
+## As of Day 15....
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 15   21:03:43  29498      0   23:30:49  21203      0
  14   01:21:36   6989      0   01:52:20   5315      0
  13   01:18:45   7078      0   11:04:46  19839      0
  12   10:52:34  26427      0   12:02:48  16648      0
