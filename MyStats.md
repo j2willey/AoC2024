@@ -61,11 +61,14 @@ This morning and to prepare for a CoH, and was only able to get back
 to the problem this evening.  At least I solved it befpre 24 hours
 and I can directly attack tonights challenge.  8-)
 
+Day 16: Solution for Part 1 was straightforward.  For Part my code was
+way too slow. Then it took a while to get the bugs out.... 8-(
 
-## As of Day 15....
+## As of Day 16....
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 16   00:59:14   3740      0   20:38:26  17256      0
  15   21:03:43  29498      0   23:30:49  21203      0
  14   01:21:36   6989      0   01:52:20   5315      0
  13   01:18:45   7078      0   11:04:46  19839      0
