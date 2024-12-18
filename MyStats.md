@@ -64,10 +64,21 @@ and I can directly attack tonights challenge.  8-)
 Day 16: Solution for Part 1 was straightforward.  For Part my code was
 way too slow. Then it took a while to get the bugs out.... 8-(
 
-## As of Day 16....
+Day 17:  FINALLLY!!!!!!!!!!!!!!!!!!
+AHHHHHHH!.     I love the premise of this problem, and it took me way
+to long to solve part 2.  A couple of misguided attempts and a lot of
+bugs in my code....  but finally worked through with what I think was
+an elegant and fast solution....  needs to be cleaned up, but its
+time to move on to day 18, which I'm almost 26 hours late starting....
+Onward Ho.... !!!   Had another Scout meeting last night which
+gave me a late start on Day 17...
+
+
+## As of Day 17....
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 17   11:16:43  18934      0       >24h  18587      0
  16   00:59:14   3740      0   20:38:26  17256      0
  15   21:03:43  29498      0   23:30:49  21203      0
  14   01:21:36   6989      0   01:52:20   5315      0

@@ -4,6 +4,7 @@ import os
 # Get the directory of the current script
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_file_path = os.path.join(script_dir, 'test.txt')
+data_file_path = os.path.join(script_dir, 'back.txt')
 data_file_path = os.path.join(script_dir, 'input.txt')
 
 # Register A: 729
@@ -25,23 +26,23 @@ program = []
 registerPattern = r"Register [A-C]: (\d+)"
 programPattern = r"Program: ([\d,]+)"
 match = re.match(registerPattern, lines[0])
-if match: 
+if match:
     registerA = int(match.group(1))
 else:
     print('Error parsing register A')
 match = re.match(registerPattern, lines[1])
-if match: 
+if match:
     registerB = int(match.group(1))
 else:
     print('Error parsing register B')
 match = re.match(registerPattern, lines[2])
-if match: 
+if match:
     registerC = int(match.group(1))
 else:
     print('Error parsing register C')
 match = re.match(programPattern, lines[4])
 if match:
-    program = list(map(int, match.group(1).split(','))) 
+    program = list(map(int, match.group(1).split(',')))
 else:
     print('Error parsing program')
 
@@ -50,9 +51,9 @@ print(f'Register B: {registerB}')
 print(f'Register C: {registerC}')
 print(f'Program: {program}')
 
-# There are two types of operands; each instruction specifies the type of its operand. 
-# The value of a literal operand is the operand itself. 
-# For example, the value of the literal operand 7 is the number 7. 
+# There are two types of operands; each instruction specifies the type of its operand.
+# The value of a literal operand is the operand itself.
+# For example, the value of the literal operand 7 is the number 7.
 # The value of a combo operand can be found as follows:
 
 # Combo operands 0 through 3 represent literal values 0 through 3.
@@ -74,57 +75,65 @@ def combo(operand):
         print('Assertion error: invalid combo operand')
         return None
 
-# The adv instruction (opcode 0) performs division. 
-# The numerator is the value in the A register. 
-# The denominator is found by raising 2 to the power of the instruction's combo operand. 
-# (So, an operand of 2 would divide A by 4 (2^2); 
-# an operand of 5 would divide A by 2^B.) 
+# The adv instruction (opcode 0) performs division.
+# The numerator is the value in the A register.
+# The denominator is found by raising 2 to the power of the instruction's combo operand.
+# (So, an operand of 2 would divide A by 4 (2^2);
+# an operand of 5 would divide A by 2^B.)
 # The result of the division operation is truncated to an integer and then written to the A register.
 def adv(operand):
+    global pc, registerA, registerB, registerC
     registerA = registerA // (2 ** combo(operand))
 
-# The bxl instruction (opcode 1) calculates the bitwise XOR of register B 
+# The bxl instruction (opcode 1) calculates the bitwise XOR of register B
 # and the instruction's literal operand, then stores the result in register B.
 def bxl(literal):
+    global pc, registerA, registerB, registerC
     registerB = registerB ^ literal
 
-# The bst instruction (opcode 2) calculates the value of its combo 
-# operand modulo 8 (thereby keeping only its lowest 3 bits), 
+# The bst instruction (opcode 2) calculates the value of its combo
+# operand modulo 8 (thereby keeping only its lowest 3 bits),
 # then writes that value to the B register.
 def bst(operand):
+    global pc, registerA, registerB, registerC
     registerB = combo(operand) % 8
 
-# The jnz instruction (opcode 3) does nothing if the A register is 0. 
-# However, if the A register is not zero, it jumps by setting the 
-# instruction pointer to the value of its literal operand; 
-# if this instruction jumps, the instruction pointer is not increased 
+# The jnz instruction (opcode 3) does nothing if the A register is 0.
+# However, if the A register is not zero, it jumps by setting the
+# instruction pointer to the value of its literal operand;
+# if this instruction jumps, the instruction pointer is not increased
 # by 2 after this instruction.
 def jnz(literal):
+    global pc, registerA, registerB, registerC
     if registerA != 0:
         pc = literal - 2
 
-# The bxc instruction (opcode 4) calculates the bitwise XOR of register 
-# B and register C, then stores the result in register B. 
+# The bxc instruction (opcode 4) calculates the bitwise XOR of register
+# B and register C, then stores the result in register B.
 # (For legacy reasons, this instruction reads an operand but ignores it.)
 def bxc (operand):
+    global pc, registerA, registerB, registerC
     registerB = registerB ^ registerC
 
-# The out instruction (opcode 5) calculates the value of its combo operand 
-# modulo 8, then outputs that value. (If a program outputs multiple values, 
+# The out instruction (opcode 5) calculates the value of its combo operand
+# modulo 8, then outputs that value. (If a program outputs multiple values,
 # they are separated by commas.)
 def out(operand):
+    global pc, registerA, registerB, registerC
     print(f'{combo(operand)%8}', end=',')
 
-# The bdv instruction (opcode 6) works exactly like the adv instruction 
-# except that the result is stored in the B register. (The numerator is 
+# The bdv instruction (opcode 6) works exactly like the adv instruction
+# except that the result is stored in the B register. (The numerator is
 # still read from the A register.)
 def bdv(operand):
+    global pc, registerA, registerB, registerC
     registerB = registerA // (2 ** combo(operand))
 
-# The cdv instruction (opcode 7) works exactly like the adv instruction 
-# except that the result is stored in the C register. 
+# The cdv instruction (opcode 7) works exactly like the adv instruction
+# except that the result is stored in the C register.
 # (The numerator is still read from the A register.)
 def cdv(operand):
+    global pc, registerA, registerB, registerC
     registerC = registerA // (2 ** combo(operand))
 
 
@@ -133,18 +142,21 @@ opc2fxn =  {0: adv, 1: bxl, 2: bst, 3: jnz, 4: bxc, 5: out, 6: bdv, 7: cdv}
 
 print("# Part 1:  test.txt   expected output  4,6,3,5,6,3,5,2,1,0 ")
 
+registerA = 4652784244670
 
 pc = 0
 while pc < len(program):
+    #print(f'pc: {pc}  program[pc]: {program[pc]}  operand: {program[pc+1]}   function: {opc2fxn[program[pc]]}')
+    #print(f'rA: {registerA}  rB: {registerB}  rC: {registerC}')
     opcode = program[pc]
     operand = program[pc + 1]
     opc2fxn[opcode](operand)
     pc += 2
 
-print('') 
+print('')
 
-# Part 1:  test.txt   expected output  4,6,3,5,6,3,5,2,1,0 
-
+# Part 1:  test.txt   expected output  4,6,3,5,6,3,5,2,1,0
+#print("# Part 2:  test.txt   expected output  Program: 2,4,1,2,7,5,1,3,4,4,5,5,0,3,3,0 ")
 
 
 
