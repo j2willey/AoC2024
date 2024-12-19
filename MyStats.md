@@ -73,11 +73,19 @@ time to move on to day 18, which I'm almost 26 hours late starting....
 Onward Ho.... !!!   Had another Scout meeting last night which
 gave me a late start on Day 17...
 
+Day 18:  Considering it took me almost two days (clock time) to finish
+Day 17, I'm happy this was easier and I finish quickly.  My overall
+rank is way down as I did not start until an hour ago. Its done.
+Now I get a breather and head off to another meeting before tonights
+challenges...
 
-## As of Day 17....
+
+
+## As of Day 18....
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 18   20:26:47  22824      0   20:43:46  22183      0
  17   11:16:43  18934      0       >24h  18587      0
  16   00:59:14   3740      0   20:38:26  17256      0
  15   21:03:43  29498      0   23:30:49  21203      0
