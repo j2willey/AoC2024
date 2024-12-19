@@ -79,12 +79,17 @@ rank is way down as I did not start until an hour ago. Its done.
 Now I get a breather and head off to another meeting before tonights
 challenges...
 
+Day 19:  Easy Peasy.  Took my time before starting... Started about
+9:45.  Should have started earlier and could have had a much better rank.
+Tired.  Time to get some sleep.   
+Good day. Finished Day Part 2, Day 18 parts 1 and 2 and Day 19 1 and 2
+in the couple hours...
 
-
-## As of Day 18....
+## As of Day 19....
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 19   01:19:39   5906      0   01:36:26   5071      0
  18   20:26:47  22824      0   20:43:46  22183      0
  17   11:16:43  18934      0       >24h  18587      0
  16   00:59:14   3740      0   20:38:26  17256      0
