@@ -1,5 +1,5 @@
 import os
-from collections import deque
+from collections import deque, Counter
 
 def loadmap(filename):
     # Get the directory of the current script
@@ -17,20 +17,6 @@ def loadmap(filename):
             row.append(l)
         omap.append(row)
     return omap
-
-# with the path as an array, find all pairs of cells that are not 
-# adjacent in the path or distance 1 apart in the path, and are a 
-# distance of 2 apart in the map (i.e. there is a wall between them)
-# return the array of pairs of cells that are cheats and the distance
-# between them on the path
-def findallcheats(map, path):
-    cheats = []
-    for i in range(len(path)):
-        for j in range(i+2, len(path)):
-            if abs(path[i][0] - path[j][0]) + abs(path[i][1] - path[j][1]) == 2:
-                if map[path[i][0]][path[j][1]] == '#' and map[path[j][0]][path[i][1]] == '#':
-                    cheats.append((path[i], path[j], j-i))
-    return cheats
 
 def printmap(map):
     print("____________")
@@ -70,16 +56,68 @@ def findShortestPath(map, start, end):
 
     return None
 
+# with the path as an array, find all pairs of cells that are not 
+# adjacent in the path or distance 1 apart in the path, and are a 
+# distance of 2 apart in the map (i.e. there is a wall between them)
+# return the array of pairs of cells that are cheats and the distance
+# between them on the path
+def findallcheats(map, path, mincheat = 0):
+    pathset = { p: i for i, p in enumerate(path)}
+    #print("Pathset:", pathset)
+    left = (0, -1)
+    right = (0, 1)
+    up = (-1, 0)
+    down = (1, 0)    
+    cheats = []
+
+    def checkdir( y, x , dy, dx):
+        cheat = (y + 2*dy, x + 2*dx)
+        if cheat in path and map[y + dy][x + dx] == '#':
+            #print("Cheat:", cheat, "Path:", pathset[cheat], "Path:", pathset[(y, x)])
+            return pathset[cheat] -pathset[(y, x)] -2
+        return 0 
+
+    for i in range(len(path)):
+        cheat = checkdir(path[i][0], path[i][1], left[0], left[1])
+        if cheat >= mincheat:
+                cheats.append(cheat)
+        cheat = checkdir(path[i][0], path[i][1], right[0], right[1]) 
+        if cheat >= mincheat:
+                cheats.append(cheat)
+        cheat = checkdir(path[i][0], path[i][1], up[0], up[1]) 
+        if cheat >= mincheat:
+                cheats.append(cheat)
+        cheat = checkdir(path[i][0], path[i][1], down[0], down[1])  
+        if cheat >= mincheat:
+                cheats.append(cheat )
+
+    return cheats
+
 # Example usage
-maze = loadmap('test.txt')
+maze = loadmap('input.txt')
 printmap(maze)
 start, end = findstartandend(maze)
 print("Start:", start, "End:", end)
 path = findShortestPath(maze, start, end)
 print("Shortest Path:", path)
-cheats = findallcheats(maze, path)
+print("length path:", len(path))
 
-print ("Cheats:")
+cheats = findallcheats(maze, path, 100)
 
-for cheat in cheats:
-    print("Cheat:", cheat)
+countedCheats = Counter(cheats)
+print ("Cheats:", countedCheats)
+cheatsCounted = [(c,s) for s, c in countedCheats.items()]
+cheatsCounted.sort(key = lambda x: x[1])
+print ("Cheats:" , cheatsCounted)
+print(f"cheats: {len(cheats)}")
+# 14 save  2 picoseconds.
+# 14 save  4 picoseconds.
+#  2 save  6 picoseconds.
+#  4 save  8 picoseconds.
+#  2 save 10 picoseconds.
+#  3 save 12 picoseconds.
+#  1 save 20 picoseconds.
+#  1 save 36 picoseconds.
+#  1 save 38 picoseconds.
+#  1 save 40 picoseconds.
+#  1 save 64 picoseconds.
