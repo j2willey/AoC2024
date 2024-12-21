@@ -56,68 +56,101 @@ def findShortestPath(map, start, end):
 
     return None
 
-# with the path as an array, find all pairs of cells that are not 
-# adjacent in the path or distance 1 apart in the path, and are a 
-# distance of 2 apart in the map (i.e. there is a wall between them)
-# return the array of pairs of cells that are cheats and the distance
-# between them on the path
-def findallcheats(map, path, mincheat = 0):
+# original Part 1 implementation
+def findallcheatsof2(map, path, mincheat = 0):
     pathset = { p: i for i, p in enumerate(path)}
-    #print("Pathset:", pathset)
     left = (0, -1)
     right = (0, 1)
     up = (-1, 0)
-    down = (1, 0)    
+    down = (1, 0)
     cheats = []
 
-    def checkdir( y, x , dy, dx):
+    def checkdir( position , direction):
+        y, x = position
+        dy, dx = direction
         cheat = (y + 2*dy, x + 2*dx)
-        if cheat in path and map[y + dy][x + dx] == '#':
-            #print("Cheat:", cheat, "Path:", pathset[cheat], "Path:", pathset[(y, x)])
-            return pathset[cheat] -pathset[(y, x)] -2
-        return 0 
+        if cheat in path:
+            return pathset[cheat] - pathset[(y, x)] - 2
+        return 0
 
     for i in range(len(path)):
-        cheat = checkdir(path[i][0], path[i][1], left[0], left[1])
+        cheat = checkdir(path[i], left)
         if cheat >= mincheat:
                 cheats.append(cheat)
-        cheat = checkdir(path[i][0], path[i][1], right[0], right[1]) 
+        cheat = checkdir(path[i], right)
         if cheat >= mincheat:
                 cheats.append(cheat)
-        cheat = checkdir(path[i][0], path[i][1], up[0], up[1]) 
+        cheat = checkdir(path[i], up)
         if cheat >= mincheat:
                 cheats.append(cheat)
-        cheat = checkdir(path[i][0], path[i][1], down[0], down[1])  
+        cheat = checkdir(path[i], down)
         if cheat >= mincheat:
                 cheats.append(cheat )
 
     return cheats
 
-# Example usage
+def findallcheatsofn(map, path, maxcheat, mincheat = 0):
+    maxcheat = maxcheat + 1
+    pathset = { p: i for i, p in enumerate(path)}
+    #print("Pathset:", pathset)
+    cheats = []
+
+    def checkdir( pos , dy, dx):
+        y, x = pos
+        cheat = (y + dy, x + dx)
+        if cheat in path:
+            return pathset[cheat] - pathset[pos] - abs(dy) - abs(dx)
+        return 0
+
+    for i in range(len(path) - 1):
+        for dx in range(maxcheat ):
+            for dy in range(maxcheat - dx):
+                if dx + dy <= 1 or (dx == 1 and dy == 1):
+                    continue
+                #print(f'  path[{i}] = {path[i]}, dx = {dx}, dy = {dy}')
+                cheat = checkdir(path[i], dy, dx)
+                if cheat >= mincheat:
+                    cheats.append(cheat)
+                if dx > 0:
+                    cheat = checkdir(path[i], dy, -dx)
+                    if cheat >= mincheat:
+                        cheats.append(cheat)
+                if dy > 0:
+                    cheat = checkdir(path[i], -dy, dx)
+                    if cheat >= mincheat:
+                        cheats.append(cheat)
+                if dx > 0 and dy > 0:
+                    cheat = checkdir(path[i], -dy, -dx)
+                    if cheat >= mincheat:
+                        cheats.append(cheat )
+    return cheats
+
 maze = loadmap('input.txt')
-printmap(maze)
+#printmap(maze)
 start, end = findstartandend(maze)
 print("Start:", start, "End:", end)
 path = findShortestPath(maze, start, end)
-print("Shortest Path:", path)
 print("length path:", len(path))
 
-cheats = findallcheats(maze, path, 100)
+# First implementation for Part 1
+#cheats = findallcheatsof2(maze, path, 2)
+# reimplementation for Part 2 also solving Part 1
+cheats = findallcheatsofn(maze, path, 2, 100)
 
-countedCheats = Counter(cheats)
-print ("Cheats:", countedCheats)
-cheatsCounted = [(c,s) for s, c in countedCheats.items()]
-cheatsCounted.sort(key = lambda x: x[1])
-print ("Cheats:" , cheatsCounted)
-print(f"cheats: {len(cheats)}")
-# 14 save  2 picoseconds.
-# 14 save  4 picoseconds.
-#  2 save  6 picoseconds.
-#  4 save  8 picoseconds.
-#  2 save 10 picoseconds.
-#  3 save 12 picoseconds.
-#  1 save 20 picoseconds.
-#  1 save 36 picoseconds.
-#  1 save 38 picoseconds.
-#  1 save 40 picoseconds.
-#  1 save 64 picoseconds.
+print ("Part 1:  Cheats:", len(cheats))
+# Part 1:  Cheats: 1530
+
+# countedCheats = Counter(cheats)
+# cheatsCounted = [(c,s) for s, c in countedCheats.items()]
+# cheatsCounted.sort(key = lambda x: x[1])
+# for cheat in cheatsCounted:
+#     print(f"  {cheat[0]} save {cheat[1]} picoseconds.")
+
+print("Part 2: Cheats of 20 upto picoseconds")
+minsave = 100
+cheats = findallcheatsofn(maze, path, 20, minsave)
+
+print(f"cheats: {len(cheats)} saving more than {minsave} picoseconds" )
+
+# Part 2  cheats: 1033983 saving more than 100 picoseconds
+
