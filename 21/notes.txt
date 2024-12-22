@@ -1,0 +1,36 @@
+
+
+
+
+029A
+  <A^A>^^AvvvA  len: 12
+  v<<A>>^A<A>AvA<^AA>A<vAAA>^A
+  v<<A>>^A<A>AvA<^AA>A<vAAA>^A  len: 28
+  <vA<AA>>^AvAA<^A>A<v<A>>^AvA^A<vA>^A<v<A>^A>AAvA^A<v<A>A>^AAAvA<^A>A  len: 68
+
+MINE
+
+AOC
+ m3: <v<A>>^AvA^A<v <A>>^AA<vA<A>>^AAvAA<^A>   A<vA>^AA<A>A<v<A>A>^AAAvA<^A>A  len: 68
+ l3: <v<A>>^AvA^A<v     A<AA>>^AAvA<^A>AAvA^   A<vA>^AA<A>A<v<A>A>^AAAvA<^A>A  len: 64
+
+
+ m2: <A>A <AAv<AA>>^ AvAA^A<vAAA>^A
+ l2: <A>A v<<AA>^AA> AvAA^A<vAAA>^A
+
+
+ m1: ^A ^^<<  A>>AvvvA
+ l1: ^A <<^^  A>>AvvvA
+ m0: 379A
+ l0: 379A
+
+# +---+---+---+
+# | 7 | 8 | 9 |
+# +---+---+---+            +---+---+
+# | 4 | 5 | 6 |            | ^ | A |
+# +---+---+---+   ==>  +---+---+---+
+# | 1 | 2 | 3 |        | < | v | > |
+# +---+---+---+        +---+---+---+
+#     | 0 | A |
+#     +---+---+
+
