@@ -96,11 +96,17 @@ trying to figure it out,  finally looked at reddit, and wound up
 reimplementing someone else solution in my own hand...  And in the process
 got the solution for part 2 included.  I'm now two days behind.
 Will try to catch up tomorrow after sleep.
+      (really its already Day 23, will move on to 22 tomorrow)....
 
-## As of Day 21 (really its already Day 23, will move on to 22 tomorrow)....
+Day 22:  Okay, catching up... I'm happy with my solution and implentation.
+Problem wasn't too difficult... It all comes down to reading 8-)
+but I got them bananas ...
+
+## As of Day 22
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 22       >24h  19444      0       >24h  17440      0
  21       >24h  15013      0       >24h  11226      0
  20   14:10:00  17272      0   23:43:08  16166      0
  19   01:19:39   5906      0   01:36:26   5071      0
