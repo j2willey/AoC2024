@@ -97,6 +97,8 @@ reimplementing someone else solution in my own hand...  And in the process
 got the solution for part 2 included.  I'm now two days behind.
 Will try to catch up tomorrow after sleep.
       (really its already Day 23, will move on to 22 tomorrow)....
+      fwiw... this is the solution I reimplemented from...
+      https://github.com/mattbillenstein/aoc/blob/main/2024/21/p.py
 
 Day 22:  Okay, catching up... I'm happy with my solution and implentation.
 Problem wasn't too difficult... It all comes down to reading 8-)

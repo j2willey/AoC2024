@@ -1,6 +1,9 @@
 import os
 from functools import lru_cache
 
+#  credit where credit is due...
+#  this is the solution I took inspiration/reimplemented from...
+#  https://github.com/mattbillenstein/aoc/blob/main/2024/21/p.py
 
 def loadCombos(filename):
     # Get the directory of the current script
