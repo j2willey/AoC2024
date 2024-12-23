@@ -104,10 +104,13 @@ Day 22:  Okay, catching up... I'm happy with my solution and implentation.
 Problem wasn't too difficult... It all comes down to reading 8-)
 but I got them bananas ...
 
-## As of Day 22
+Day 23:  Keeping the streak alive...  all problems solved.
+
+## As of Day 23
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 23   13:53:25  16906      0   18:07:35  15822      0
  22       >24h  19444      0       >24h  17440      0
  21       >24h  15013      0       >24h  11226      0
  20   14:10:00  17272      0   23:43:08  16166      0
