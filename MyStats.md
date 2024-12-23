@@ -88,10 +88,20 @@ in the couple hours...
 Day 20:  Was stumped on part 2.  Finally solved it.  Nothing to be proud
 of, but I finally got it done.
 
-## As of Day 20....
+Day 21: (2 hours into Day 23....)  Between other holiday entanglements...
+I struggled with this one.  I had hard coded implementation for part 1
+that I could not get providing the correct answer for puzzle input though
+it worked flawlessly on the given test data.  I was stumped for 2 days
+trying to figure it out,  finally looked at reddit, and wound up
+reimplementing someone else solution in my own hand...  And in the process
+got the solution for part 2 included.  I'm now two days behind.
+Will try to catch up tomorrow after sleep.
+
+## As of Day 21 (really its already Day 23, will move on to 22 tomorrow)....
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 21       >24h  15013      0       >24h  11226      0
  20   14:10:00  17272      0   23:43:08  16166      0
  19   01:19:39   5906      0   01:36:26   5071      0
  18   20:26:47  22824      0   20:43:46  22183      0
