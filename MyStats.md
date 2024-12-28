@@ -109,11 +109,18 @@ Day 23:  Keeping the streak alive...  all problems solved.
 Day "24":  Post Christmas, finally solved part 2.  Took way too long. Also
 the typical holiday distractions and interuptions.
 
+Day "25":  "...I coulda been a contenda..."
+No.. seriously no.  I'm not a competitive coder.  However If I'd had
+a little more time... I could have had better rankings.  I should have
+finished days 24 nd 25 on Christmas day.  All in all, its been fun.
+I may come back to the repository and clean up the code just for practice.
+But as of now,  all 50 puzzles are solved.  Yeah.
 
-## As of Day "24"
+## As of Day "25"
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 25       >24h  20421      0       >24h  12630      0
  24       >24h  18638      0       >24h  14473      0
  23   13:53:25  16906      0   18:07:35  15822      0
  22       >24h  19444      0       >24h  17440      0
