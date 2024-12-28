@@ -106,10 +106,15 @@ but I got them bananas ...
 
 Day 23:  Keeping the streak alive...  all problems solved.
 
-## As of Day 23
+Day "24":  Post Christmas, finally solved part 2.  Took way too long. Also
+the typical holiday distractions and interuptions.
+
+
+## As of Day "24"
 
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 24       >24h  18638      0       >24h  14473      0
  23   13:53:25  16906      0   18:07:35  15822      0
  22       >24h  19444      0       >24h  17440      0
  21       >24h  15013      0       >24h  11226      0
