@@ -1,33 +1,35 @@
 import os
 
-# Get the directory of the current script
-script_dir = os.path.dirname(os.path.abspath(__file__))
-data_file_path = os.path.join(script_dir, 'test2.txt')
-data_file_path = os.path.join(script_dir, 'input.txt')
+def loaddata(filename = "input.txt"):
+    # Get the directory of the current script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    data_file_path = os.path.join(script_dir, filename)
 
-lines = None
-with open(data_file_path) as f:
-    lines = f.readlines()
+    lines = None
+    with open(data_file_path) as f:
+        lines = f.readlines()
 
-inMap = True
-omap = []
-moves = []
-for line in lines:
-    row = []
-    if line.strip() == "":
-        inMap = False
-        continue
-    if inMap:
-        for l in line.strip():
-            row.append(l)
-        omap.append(row)
-    else:
-        moves.append(line.strip())
-moves = "".join(moves)
+    inMap = True
+    omap = []
+    moves = []
+    for line in lines:
+        row = []
+        if line.strip() == "":
+            inMap = False
+            continue
+        if inMap:
+            for l in line.strip():
+                row.append(l)
+            omap.append(row)
+        else:
+            moves.append(line.strip())
+    moves = "".join(moves)
 
-def printmap(map = omap):
+    return omap, moves
+
+def printmap(amap):
     print("____________")
-    for row in map:
+    for row in amap:
         print(''.join(row))
     print("^^^^^^^^^^^^")
 
@@ -67,32 +69,29 @@ def moveRobot(x, y, dx, dy, rmap, n = 1):
     rmap[y][x] = '.'
     return moveRobot(x + dx, y + dy, dx, dy, rmap, n - 1)
 
-def sumGPS(omap):
+def sumGPS(omap, symbol):
     sum = 0
     for j in range(1, len(omap) -1):
         for i in range(1, len(omap[0]) -1):
-            if omap[j][i] =='O':
+            if omap[j][i] == symbol:
 
                 sum += (100 * j) + i
     return sum
 
 
+def day15Part1(filename = "input.txt"):
+    omap, moves = loaddata()
+    x, y = findRobot(omap)
 
-printmap(omap)
-printmoves(moves)
+    for d in moves:
+        dy, dx = dir[d]
+        omap, x, y = moveRobot(x, y, dx, dy, omap)
 
-x, y = findRobot(omap)
+    # Part1 solution  1426855
+    return sumGPS(omap, 'O'), "Part1 solution"
 
-for d in moves:
-    dy, dx = dir[d]
-    #print(f"\nd, dx, dy: '{d}'  {dx}, {dy}")
-    omap, x, y = moveRobot(x, y, dx, dy, omap)
-    #printmap(omap)
-
-printmap(omap)
-
-# Part1 solution  1426855
-print(f"Part1 solution  {sumGPS(omap)}")
+if __name__ == "__main__":
+    print(day15Part1())
 
 
 # test1.txt

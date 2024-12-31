@@ -145,3 +145,67 @@ Day       Time   Rank  Score       Time   Rank  Score
   3   01:25:19  18363      0   01:37:10  14739      0
   2   15:30:45  94834      0   16:22:23  73182      0
   1   10:52:37  58676      0   11:02:49  54839      0
+
+  Day 25 + 1....
+  During the AoC Challenge I was focused on solving each challenge as its own effort.  As time went on I realized it begged for a more coordinated effort
+  between challenge.   I couldn't let go... and in my 'free' time post challenge
+  went back and created a top level program to call and verify each challenge.
+  I realize I should have done this from the beginning and will take that on
+  for future challenges... Better late than never.
+
+[Running] python -u "d:\ws\AoC2024\aoc2024.py"
+Day 1 Part 1: PASS (0.001527 seconds)
+Day 1 Part 2: PASS (0.000000 seconds)
+Day 2 Part 1: PASS (0.012637 seconds)
+Day 2 Part 2: PASS (0.011287 seconds)
+Day 3 Part 1: PASS (0.005082 seconds)
+Day 3 Part 2: PASS (0.004536 seconds)
+Day 4 Part 1: PASS (0.010689 seconds)
+Day 4 Part 2: PASS (0.005334 seconds)
+Day 5 Part 1: PASS (0.005237 seconds)
+Day 5 Part 2: PASS (0.007503 seconds)
+Day 6 Part 1: PASS (0.006810 seconds)
+Day 6 Part 2: PASS (16.043635 seconds)
+Day 7 Part 1: PASS (0.371920 seconds)
+Day 7 Part 2: PASS (20.362923 seconds)
+Day 8 Part 1: PASS (0.015993 seconds)
+Day 8 Part 2: PASS (0.002538 seconds)
+Day 9 Part 1: PASS (0.025916 seconds)
+Day 9 Part 2: PASS (2.393878 seconds)
+Day 10 Part 1: PASS (0.004483 seconds)
+Day 10 Part 2: PASS (0.004485 seconds)
+Day 11 Part 1: PASS (0.002493 seconds)
+Day 11 Part 2: PASS (0.104675 seconds)
+Day 12 Part 1: PASS (0.059302 seconds)
+Day 12 Part 2: PASS (0.082169 seconds)
+Day 13 Part 1: PASS (0.000000 seconds)
+Day 13 Part 2: PASS (0.002020 seconds)
+Day 14 Part 1: PASS (0.003139 seconds)
+Day 14 Part 2: PASS (0.000000 seconds)
+Day 15 Part 1: PASS (0.009596 seconds)
+Day 15 Part 2: PASS (0.011816 seconds)
+Day 16 Part 1: PASS (1.423681 seconds)
+Day 16 Part 2: PASS (886.721761 seconds)
+Day 17 Part 1: PASS (0.011786 seconds)
+Day 17 Part 2: PASS (0.044996 seconds)
+Day 18 Part 1: PASS (0.042230 seconds)
+Day 18 Part 2: PASS (25.352488 seconds)
+Day 19 Part 1: PASS (0.148443 seconds)
+Day 19 Part 2: PASS (0.442569 seconds)
+Day 20 Part 1: PASS (5.202368 seconds)
+Day 20 Part 2: PASS (1253.341575 seconds)
+Day 21 Part 1: PASS (0.018790 seconds)
+Day 21 Part 2: PASS (0.009972 seconds)
+Day 22 Part 1: PASS (4.867546 seconds)
+Day 22 Part 2: PASS (4.965239 seconds)
+Day 23 Part 1: PASS (0.020448 seconds)
+Day 23 Part 2: PASS (2.103588 seconds)
+Day 24 Part 1: PASS (0.091553 seconds)
+Day 24 Part 2: PASS (0.003474 seconds)
+Day 25 Part 1: PASS (0.066935 seconds)
+Day 25 Part 2: PASS (0.000000 seconds)
+
+[Done] exited with code=0 in 2224.674 seconds
+
+with a few glaring exceptions, I think most of my solutions were
+pretting reasonable and efficient.

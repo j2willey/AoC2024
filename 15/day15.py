@@ -65,6 +65,28 @@ def findRobot(amap):
 # replacing empty spaces '.' with the with the boxes or robot '@', until a wall '#'
 # is encountered. move the robot and boxes it would push n space in the directions
 # specified, return the updated map after the robot has moved.
+def moveRobot(x, y, dx, dy, rmap, n = 1):
+    if n == 0:
+        return rmap, x, y
+    if rmap[y + dy][x + dx] == '#':
+        return rmap, x, y
+    if rmap[y + dy][x + dx] == '.':
+        rmap[y + dy][x + dx] = '@'
+        rmap[y][x] = '.'
+        return moveRobot(x + dx, y + dy, dx, dy, rmap, n - 1)
+    i, j = dx, dy
+    while rmap[y + j][x + i] == 'O':
+        i += dx
+        j += dy
+    if rmap[y + j][x + i] == '#':
+        return rmap, x, y
+    # else  rmap[x + i][y + j] == '.'
+    rmap[y + j][x + i] = 'O'
+    rmap[y + dy][x + dx] = '@'
+    rmap[y][x] = '.'
+    return moveRobot(x + dx, y + dy, dx, dy, rmap, n - 1)
+
+# Part 2
 def moveRobotX(x, y, dx, rmap, n = 1):
     if n == 0:
         return rmap, x, y
@@ -157,6 +179,19 @@ def sumGPS(omap, symbol):
                 sum += (100 * j) + i
     return sum
 
+
+def day15Part1(filename = "input.txt"):
+    omap, moves = loaddata()
+    x, y = findRobot(omap)
+
+    for d in moves:
+        dy, dx = dir[d]
+        #print(f"\nd, dx, dy: '{d}'  {dx}, {dy}")
+        omap, x, y = moveRobot(x, y, dx, dy, omap)
+
+    # Part1 solution  1426855
+    return sumGPS(omap, 'O'), "Part1 solution"
+
 def day15Part2(filename = "input.txt"):
     omap, moves = loaddata()
     omap = xxmap(omap)
@@ -175,6 +210,7 @@ def day15Part2(filename = "input.txt"):
     return sumGPS(omap, '['), "Part2 solution"
 
 if __name__ == "__main__":
+    print(day15Part1())
     print(day15Part2())
 
 # test1.txt
